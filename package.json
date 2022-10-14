@@ -1,0 +1,19 @@
+{
+    "name": "test-a17-behavior",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "vite": "^3.1.8"
+    },
+    "dependencies": {
+        "@area17/a17-behaviors": "^0.2.0",
+        "vite-plugin-environment": "~1.1.2",
+        "@area17/a17-helpers": "^3.0.2"
+    }
+}
