@@ -9,10 +9,16 @@ const showAlert = createBehavior('showAlert',
     },
     {
         init() {
-            this.$node.addEventListener('click', this.alert);
+            this.$btn = this.getChild('btn');
+            this.$btn.addEventListener('click', this.alert);
+
+            // Test alias and import of a behavior inside another behavior which is working with Vite
+            import('@/lazybehaviors/showAlertLazy.js').then(module => {
+                this.addSubBehavior(module.default);
+            })
         },
         destroy() {
-            this.$node.removeEventListener('click', this.alert);
+            this.$btn.removeEventListener('click', this.alert);
         }
     }
 );

@@ -9,10 +9,11 @@ const showAlertLazy = createBehavior('showAlertLazy',
     },
     {
         init() {
-            this.$node.addEventListener('click', this.alert);
+            this.$btn = this.getChild('btn');
+            this.$btn.addEventListener('click', this.alert);
         },
         destroy() {
-            this.$node.removeEventListener('click', this.alert);
+            this.$btn.removeEventListener('click', this.alert);
         }
     }
 );
