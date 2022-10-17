@@ -13,9 +13,12 @@ const showAlert = createBehavior('showAlert',
             this.$btn.addEventListener('click', this.alert);
 
             // Test alias and import of a behavior inside another behavior which is working with Vite
-            import('@/lazybehaviors/showAlertLazy.js').then(module => {
-                this.addSubBehavior(module.default);
-            })
+            const behaviorNames = this.options.lazy ? this.options.lazy.split(' ') : [];
+            behaviorNames.forEach(behaviorName => {
+                import(`@/lazybehaviors/${behaviorName}.js`).then(module => {
+                    this.addSubBehavior(module.default);
+                })
+            });
         },
         destroy() {
             this.$btn.removeEventListener('click', this.alert);
