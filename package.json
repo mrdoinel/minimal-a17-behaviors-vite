@@ -10,10 +10,10 @@
     },
     "devDependencies": {
         "vite": "^3.1.8",
-        "vite-plugin-dynamic-import": "^1.2.2"
+        "vite-plugin-dynamic-import": "^1.2.3"
     },
     "dependencies": {
-        "@area17/a17-behaviors": "^0.2.0",
+        "@area17/a17-behaviors": "^0.2.2",
         "@area17/a17-helpers": "^3.0.2",
         "vite-plugin-environment": "~1.1.2"
     }

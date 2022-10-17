@@ -7,16 +7,21 @@ import dynamicImport from 'vite-plugin-dynamic-import'
 export default ({ mode }) =>
     defineConfig({
         plugins: [
+            dynamicImport(),
             environmentPlugin({
                 MODE: mode,
-                BEHAVIORS_PATH: fileURLToPath(new URL('js/behaviors', import.meta.url)),
+                BEHAVIORS_PATH: resolve(__dirname, 'js/lazybehaviors'),
                 BEHAVIORS_EXTENSION: 'js'
-            }),
-            dynamicImport()
+            })
         ],
         resolve: {
             alias: {
                 '@': resolve(__dirname, 'js')
             }
+        },
+        build: {
+            target: 'modules',
+            assetsDir: 'assets',
+            dynamicImportVarsOptions: { warnOnError: true }
         }
     })
