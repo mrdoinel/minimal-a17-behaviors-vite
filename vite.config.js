@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import environmentPlugin from 'vite-plugin-environment'
 import dynamicImport from 'vite-plugin-dynamic-import'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default ({ mode }) =>
     defineConfig({
@@ -10,7 +11,7 @@ export default ({ mode }) =>
             dynamicImport(),
             environmentPlugin({
                 MODE: mode,
-                BEHAVIORS_PATH: resolve(__dirname, 'js/lazybehaviors'),
+                BEHAVIORS_PATH: fileURLToPath(new URL('/js/lazybehaviors', import.meta.url)),
                 BEHAVIORS_EXTENSION: 'js'
             })
         ],
@@ -20,8 +21,12 @@ export default ({ mode }) =>
             }
         },
         build: {
+            minify: false,
             target: 'modules',
             assetsDir: 'assets',
-            dynamicImportVarsOptions: { warnOnError: true }
+            dynamicImportVarsOptions: { 
+                warnOnError: true,
+                exclude: []
+            }
         }
     })

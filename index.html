@@ -8,10 +8,14 @@
   <body>
     <div id="app">
         <p>Imported Behavior :</p>
-        <div data-behavior="showAlert" data-showalert-lazy="showAlertLazy showAlertLazyAlt">
-          <button data-showalert-btn>Click me</button>
-          <button data-showalertlazy-btn>Click me lazy behavior</button>
+        <div data-behavior="showAlert" data-showalert-lazy="showAlertLazyAlt">
+          <button data-showalert-btn>Click me</button><br>
           <button data-showalertlazyalt-btn>Click me lazy behavior alternate</button>
+        </div>
+        <p>Lazyloaded Behavior :</p>
+        <div data-behavior-lazy="showAlertLazy">
+          <button data-showalertlazy-btn>Click me lazy behavior</button><br>
+          <button data-showalertlazy-load>Click me append new behavior</button>
         </div>
     </div>
     <script type="module" src="/js/main.js"></script>
