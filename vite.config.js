@@ -3,7 +3,6 @@ import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import environmentPlugin from 'vite-plugin-environment'
 import dynamicImport from 'vite-plugin-dynamic-import'
-import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default ({ mode }) =>
     defineConfig({

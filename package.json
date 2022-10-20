@@ -13,8 +13,8 @@
         "vite-plugin-dynamic-import": "^1.2.3"
     },
     "dependencies": {
-        "@area17/a17-behaviors": "^0.2.2",
+        "@area17/a17-behaviors": "^0.2.4",
         "@area17/a17-helpers": "^3.0.2",
-        "vite-plugin-environment": "~1.1.2"
+        "vite-plugin-environment": "~1.1.3"
     }
 }

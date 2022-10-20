@@ -10,12 +10,14 @@
         <p>Imported Behavior :</p>
         <div data-behavior="showAlert" data-showalert-lazy="showAlertLazyAlt">
           <button data-showalert-btn>Click me</button><br>
-          <button data-showalertlazyalt-btn>Click me lazy behavior alternate</button>
+          <button data-showalertlazyalt-btn>Click me lazyloaded behavior using dynamic import</button>
         </div>
         <p>Lazyloaded Behavior :</p>
         <div data-behavior-lazy="showAlertLazy">
-          <button data-showalertlazy-btn>Click me lazy behavior</button><br>
-          <button data-showalertlazy-load>Click me append new behavior</button>
+          <button data-showalertlazy-btn>Click me lazyloaded behavior</button><br>
+          <button data-showalertlazy-load>Click me append new behavior</button><br>
+          <button data-showalertlazy-delete>Click me destroy added behavior</button>
+          <div data-showalertlazy-container></div>
         </div>
     </div>
     <script type="module" src="/js/main.js"></script>
